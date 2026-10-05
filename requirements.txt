@@ -1,0 +1,13 @@
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+openai>=1.70,<3.0
+python-dotenv>=1.0,<2.0
+pydantic>=2.0,<3.0
+
+# Local Hugging Face Gemma support
+torch>=2.2
+transformers>=4.50
+accelerate>=1.0
+huggingface_hub>=0.30
+sentencepiece>=0.2
+safetensors>=0.4
