@@ -23,9 +23,9 @@ OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini").strip()
 
 HF_MODEL_ID = os.getenv("HF_MODEL_ID", "google/gemma-3-1b-it").strip()
 HF_TOKEN = os.getenv("HF_TOKEN", "").strip()
+HOST = os.getenv("HOST", "0.0.0.0")
+PORT = int(os.getenv("PORT", "10000"))
 
-HOST = os.getenv("HOST", "127.0.0.1")
-PORT = int(os.getenv("PORT", "8000"))
 
 # OpenAI client is optional.
 openai_client = None
