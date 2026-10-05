@@ -26,7 +26,6 @@ HF_TOKEN = os.getenv("HF_TOKEN", "").strip()
 HOST = os.getenv("HOST", "0.0.0.0")
 PORT = int(os.getenv("PORT", "10000"))
 
-
 # OpenAI client is optional.
 openai_client = None
 if OPENAI_API_KEY and not OPENAI_API_KEY.startswith("PASTE_"):
