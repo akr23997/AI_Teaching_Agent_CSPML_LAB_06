@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PowerTutor AI — Teaching Agent</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">AI-POWERED TEACHING AGENT</div>
+        <h1>PowerTutor AI</h1>
+        <p>Interactive Power Electronics tutor for engineering students.</p>
+      </div>
+      <div id="statusBadge" class="status">Checking backend…</div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <section class="panel">
+          <h2>Learning settings</h2>
+
+          <label for="mode">Mode</label>
+          <select id="mode">
+            <option>Teach</option>
+            <option>Practice</option>
+            <option>Quiz</option>
+            <option>Exam</option>
+          </select>
+
+          <label for="difficulty">Level</label>
+          <select id="difficulty">
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+          </select>
+
+          <button id="clearBtn" class="secondary">Clear conversation</button>
+        </section>
+
+        <section class="panel">
+          <h2>Try an example</h2>
+          <button class="example" data-q="What is a buck converter?">What is a buck converter?</button>
+          <button class="example" data-q="Explain PWM in simple terms.">Explain PWM simply</button>
+          <button class="example" data-q="Give me a numerical problem on a boost converter.">Boost converter problem</button>
+          <button class="example" data-q="Quiz me on three-phase inverters.">Quiz: 3-phase inverter</button>
+        </section>
+
+        <section class="panel mini">
+          <h2>Why this is an agent</h2>
+          <p>
+            The backend loads a Power Electronics Markdown context and instructs
+            the LLM to teach step-by-step, adapt to level, and check understanding.
+          </p>
+        </section>
+      </aside>
+
+      <section class="chat-card">
+        <div id="chat" class="chat">
+          <div class="message assistant">
+            <div class="avatar">AI</div>
+            <div class="bubble">
+              <strong>Welcome!</strong>
+              <p>
+                I am your Power Electronics teaching agent. Ask me about
+                converters, inverters, PWM, devices, rectifiers, control,
+                or power-converter design.
+              </p>
+              <p><strong>Start with:</strong> “Explain a buck converter from the basics.”</p>
+            </div>
+          </div>
+        </div>
+
+        <form id="chatForm" class="composer">
+          <textarea
+            id="message"
+            rows="3"
+            placeholder="Ask a Power Electronics question…"
+            required
+          ></textarea>
+          <div class="composer-row">
+            <span id="hint">Press Ctrl+Enter to send</span>
+            <button id="sendBtn" type="submit">Send →</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #eef2f7;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(79, 70, 229, 0.10), transparent 30%),
+    #eef2f7;
+}
+
+.app-shell {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 22px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 8px 4px 20px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #5b61d6;
+}
+
+h1 {
+  margin: 5px 0;
+  font-size: clamp(30px, 4vw, 46px);
+  letter-spacing: -0.04em;
+}
+
+.topbar p {
+  margin: 0;
+  color: #667085;
+}
+
+.status {
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #d9dee8;
+  color: #667085;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 18px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel,
+.chat-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #dfe4ec;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(31, 41, 55, 0.07);
+}
+
+.panel {
+  padding: 18px;
+}
+
+.panel h2 {
+  margin: 0 0 15px;
+  font-size: 16px;
+}
+
+.panel label {
+  display: block;
+  margin: 12px 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #667085;
+}
+
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #d5dbe5;
+  border-radius: 12px;
+  background: #fff;
+  color: #172033;
+  font: inherit;
+  outline: none;
+}
+
+select {
+  padding: 11px;
+}
+
+select:focus,
+textarea:focus {
+  border-color: #777cf0;
+  box-shadow: 0 0 0 3px rgba(119, 124, 240, 0.13);
+}
+
+button {
+  border: 0;
+  border-radius: 11px;
+  padding: 11px 13px;
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.secondary {
+  width: 100%;
+  margin-top: 14px;
+  background: #eef0f6;
+  color: #3b4252;
+}
+
+.example {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  text-align: left;
+  background: #f5f6fb;
+  color: #333a4c;
+  font-size: 13px;
+}
+
+.mini p {
+  margin: 0;
+  color: #667085;
+  line-height: 1.6;
+  font-size: 13px;
+}
+
+.chat-card {
+  min-height: 720px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  max-height: 620px;
+}
+
+.message {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.message.user {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #ececff;
+  color: #4c50c8;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.message.user .avatar {
+  background: #172033;
+  color: #fff;
+}
+
+.bubble {
+  max-width: min(820px, 85%);
+  border-radius: 16px;
+  padding: 14px 16px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.message.assistant .bubble {
+  background: #f5f7fb;
+  border: 1px solid #e2e6ee;
+}
+
+.message.user .bubble {
+  background: #172033;
+  color: #fff;
+}
+
+.bubble p {
+  margin: 8px 0;
+}
+
+.composer {
+  border-top: 1px solid #e2e6ee;
+  padding: 16px;
+  background: #fbfcfe;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 72px;
+  padding: 13px;
+}
+
+.composer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 9px;
+}
+
+#hint {
+  color: #98a2b3;
+  font-size: 12px;
+}
+
+#sendBtn {
+  background: #5559d9;
+  color: white;
+  min-width: 110px;
+}
+
+#sendBtn:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.loading {
+  opacity: 0.7;
+}
+
+@media (max-width: 850px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    order: 2;
+  }
+
+  .chat-card {
+    min-height: 650px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
